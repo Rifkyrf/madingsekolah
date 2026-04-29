@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --primary: 217 91% 45%;          /* Biru lebih kuat */
+        --primary-foreground: 0 0% 100%;
+        --secondary: 214 32% 91%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+        --muted: 214 32% 95%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --accent: 214 32% 91%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 217 91% 45%;
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 222 47% 6%;
+        --foreground: 210 40% 98%;
+        --card: 222 47% 8%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222 47% 8%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 217 91% 60%;
+        --primary-foreground: 222 47% 6%;
+        --secondary: 217 32% 17%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217 32% 14%;
+        --muted-foreground: 215 20% 65%;
+        --accent: 217 32% 17%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 62.8% 50%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 217 32% 17%;
+        --input: 217 32% 17%;
+        --ring: 217 91% 60%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Poppins', 'Inter', sans-serif;
+    }
+}
+
+/* Scrollbar hide utility */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Safe area for bottom nav (iPhone notch) */
+.safe-area-pb { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+/* Global scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+.dark ::-webkit-scrollbar-thumb { background: #1e293b; }
+
+/* Glass effects */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.dark .glass-effect {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hero dot pattern */
+.hero-pattern {
+    background-image: radial-gradient(#2563eb 0.5px, transparent 0.5px), radial-gradient(#2563eb 0.5px, #f8fafc 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    opacity: 0.05;
+}

@@ -1,0 +1,235 @@
+/* =============== BAKNUS 666 DESIGN SYSTEM =============== */
+:root {
+    /* Main Brand Color: Baknus Royal Blue */
+    --baknus-blue: #1e40af; /* Deep Royal Blue */
+    --baknus-blue-dark: #1e3a8a;
+    --baknus-blue-light: #eff6ff;
+    
+    /* Semantic Colors */
+    --primary: var(--baknus-blue);
+    --primary-hover: var(--baknus-blue-dark);
+    --secondary: #64748b;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #0ea5e9;
+    
+    /* Background & Surfaces */
+    --bg-main: #f8fafc;
+    --sidebar-bg: #ffffff;
+    --card-bg: #ffffff;
+    
+    /* Text Colors */
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
+    
+    /* Border & Radii */
+    --border-color: #e2e8f0;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    
+    /* Shadows - Modern & Subtle */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-baknus: 0 10px 25px -5px rgba(30, 64, 175, 0.1), 0 8px 10px -6px rgba(30, 64, 175, 0.1);
+    
+    /* Dimensions */
+    --sidebar-width: 280px;
+    --topbar-height: 72px;
+}
+
+/* =============== CORE STYLES =============== */
+body {
+    font-family: 'Outfit', 'Poppins', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* =============== TOPBAR - PREMIUM GLASSMORPHISM =============== */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--topbar-height);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    z-index: 1050;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.topbar-brand {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--baknus-blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.5px;
+}
+
+.topbar-brand i {
+    font-size: 1.5rem;
+    margin-right: 12px;
+    background: linear-gradient(135deg, var(--baknus-blue), var(--baknus-blue-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =============== SIDEBAR - MODERN SAAS STYLE =============== */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--sidebar-bg);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1040;
+    border-right: 1px solid var(--border-color);
+    padding-top: var(--topbar-height);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-menu {
+    padding: 24px 16px;
+    height: calc(100vh - var(--topbar-height));
+    overflow-y: auto;
+}
+
+.menu-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin: 24px 0 12px 12px;
+    letter-spacing: 0.05em;
+}
+
+.menu-label:first-child {
+    margin-top: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.menu-item i {
+    width: 24px;
+    font-size: 1.1rem;
+    margin-right: 12px;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    background: var(--baknus-blue-light);
+    color: var(--baknus-blue);
+    transform: translateX(4px);
+}
+
+.menu-item.active {
+    background: var(--baknus-blue);
+    color: white;
+    box-shadow: var(--shadow-baknus);
+}
+
+.menu-item.active i {
+    color: white;
+}
+
+/* =============== CARDS - PREMIUM LOOK =============== */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid var(--border-color);
+    padding: 24px;
+    font-weight: 700;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+/* =============== BUTTONS =============== */
+.btn {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: var(--baknus-blue);
+    border-color: var(--baknus-blue);
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(30, 64, 175, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--baknus-blue-dark);
+    border-color: var(--baknus-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+}
+
+/* =============== STATS COMPONENT OVERRIDE =============== */
+.stats-icon {
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.card:hover .stats-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* =============== MAIN CONTENT =============== */
+.content {
+    padding: calc(var(--topbar-height) + 32px) 32px 40px;
+    margin-left: var(--sidebar-width);
+    transition: all 0.4s ease;
+}
+
+/* =============== RESPONSIVE =============== */
+@media (max-width: 991px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.open { transform: translateX(0); box-shadow: 10px 0 30px rgba(0,0,0,0.1); }
+    .content { margin-left: 0; padding: calc(var(--topbar-height) + 24px) 16px 80px; }
+}
+
+/* UTILS */
+.bg-soft-primary { background-color: var(--baknus-blue-light); }
+.text-baknus { color: var(--baknus-blue); }
+.shadow-premium { box-shadow: var(--shadow-baknus); }
